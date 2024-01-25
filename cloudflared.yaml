@@ -1,0 +1,11 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: cloudflared
+spec:
+  containers:
+  - name: command-demo-container
+    image: cloudflare/cloudflared
+    command: ["tunnel --no-autoupdate run --token TOKEN"]
+    args: ["HOSTNAME", "KUBERNETES_PORT"]
+  restartPolicy: OnFailure
