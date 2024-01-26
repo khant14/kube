@@ -1,9 +1,9 @@
 apiVersion: v1
 kind: Pod
 metadata:
-  name: stockprice
+  name: stocksymbols
 spec:
   containers:
-  - name: stock-symbols-api
+  - name: stocksymbols
     image: khant14/stock-symbols-api
   restartPolicy: OnFailure

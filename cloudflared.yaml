@@ -1,7 +1,7 @@
-apiVersion: apps/v1
-kind: Deployment
+apiVersion: v1
+kind: Pod
 metadata:
-  name: cloudflared-deployment
+  name: cloudflared
 spec:
   containers:
   - command:
