@@ -13,20 +13,22 @@ spec:
         app: code-server
     spec:
       containers:
-      - image: codercom/code-server:latest
-        imagePullPolicy: Always
-        name: code-server
-        env:
-        - name: PASSWORD
-          value: "your_password"
+        - image: codercom/code-server:latest
+          imagePullPolicy: Always
+          name: code-server
+          env:
+            - name: PASSWORD
+              value: "your_password"
+      nodeSelector:
+        node.kubernetes.io/microk8s-worker: microk8s-worker
 ---
 apiVersion: v1
 kind: Service
 metadata:
- name: code-server
+  name: code-server
 spec:
- ports:
- - port: 80
-   targetPort: 8080
- selector:
-   app: code-server
+  ports:
+    - port: 80
+      targetPort: 8080
+  selector:
+    app: code-server
