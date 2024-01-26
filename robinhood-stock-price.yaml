@@ -1,0 +1,32 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: robinhood-stock-price
+spec:
+  selector:
+    matchLabels:
+      app: robinhood-stock-price
+  replicas: 3
+  template:
+    metadata:
+      labels:
+        app: robinhood-stock-price
+    spec:
+      containers:
+        - name: robinhood-stock-price
+          image: khant14/robinhood-stock-price
+          ports:
+            - containerPort: 8001
+      nodeSelector:
+        node.kubernetes.io/microk8s-worker: microk8s-worker
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: robinhood-stock-price-service
+spec:
+  selector:
+    app: robinhood-stock-price
+  ports:
+    - protocol: TCP
+      port: 8001
