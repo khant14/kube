@@ -3,6 +3,8 @@ kind: Deployment
 metadata:
   name: code-server
 spec:
+  nodeSelector:
+    node.kubernetes.io/microk8s-worker: microk8s-worker
   selector:
     matchLabels:
       app: code-server
@@ -19,9 +21,6 @@ spec:
           env:
             - name: PASSWORD
               value: "your_password"
-      nodeSelector:
-        node.kubernetes.io/microk8s-worker: microk8s-worker
-      restartPolicy: OnFailure
 ---
 apiVersion: v1
 kind: Service
