@@ -1,7 +1,7 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: stock-symbols-api-deployment
+  name: stock-symbols-api
 spec:
   selector:
     matchLabels:
@@ -19,7 +19,6 @@ spec:
             - containerPort: 8002
       nodeSelector:
         node.kubernetes.io/microk8s-worker: microk8s-worker
-      restartPolicy: OnFailure
 ---
 apiVersion: v1
 kind: Service
