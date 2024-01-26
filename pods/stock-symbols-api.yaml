@@ -6,4 +6,6 @@ spec:
   containers:
   - name: stocksymbols
     image: khant14/stock-symbols-api
+    ports:
+    - containerPort: 8002
   restartPolicy: OnFailure
