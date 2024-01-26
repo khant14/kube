@@ -21,6 +21,7 @@ spec:
               value: "your_password"
       nodeSelector:
         node.kubernetes.io/microk8s-worker: microk8s-worker
+      restartPolicy: OnFailure
 ---
 apiVersion: v1
 kind: Service

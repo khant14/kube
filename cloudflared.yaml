@@ -28,3 +28,4 @@ spec:
         failureThreshold: 1
         initialDelaySeconds: 10
         periodSeconds: 10
+  restartPolicy: OnFailure

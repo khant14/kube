@@ -19,6 +19,7 @@ spec:
             - containerPort: 8002
       nodeSelector:
         node.kubernetes.io/microk8s-worker: microk8s-worker
+      restartPolicy: OnFailure
 ---
 apiVersion: v1
 kind: Service
