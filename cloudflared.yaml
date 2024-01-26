@@ -3,6 +3,8 @@ kind: Pod
 metadata:
   name: cloudflared
 spec:
+  nodeSelector:
+    node.kubernetes.io/microk8s-controlplane: microk8s-controlplane
   containers:
     - command:
         - cloudflared
@@ -17,8 +19,6 @@ spec:
         - <token value>
       image: cloudflare/cloudflared:latest
       name: cloudflared
-      nodeSelector:
-        node.kubernetes.io/microk8s-controlplane: microk8s-controlplane
       livenessProbe:
         httpGet:
           # Cloudflared has a /ready endpoint which returns 200 if and only if
