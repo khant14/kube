@@ -19,14 +19,3 @@ spec:
             - containerPort: 8002
       nodeSelector:
         node.kubernetes.io/microk8s-worker: microk8s-worker
----
-apiVersion: v1
-kind: Service
-metadata:
-  name: stock-symbols-api-service
-spec:
-  selector:
-    app: stock-symbols-api
-  ports:
-    - protocol: TCP
-      port: 8002

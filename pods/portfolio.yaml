@@ -19,14 +19,3 @@ spec:
             - containerPort: 3000
       nodeSelector:
         node.kubernetes.io/microk8s-worker: microk8s-worker
----
-apiVersion: v1
-kind: Service
-metadata:
-  name: portfolio-service
-spec:
-  selector:
-    app: portfolio
-  ports:
-    - protocol: TCP
-      port: 3000

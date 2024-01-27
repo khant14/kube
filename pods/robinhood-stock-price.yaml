@@ -19,14 +19,3 @@ spec:
             - containerPort: 8001
       nodeSelector:
         node.kubernetes.io/microk8s-worker: microk8s-worker
----
-apiVersion: v1
-kind: Service
-metadata:
-  name: robinhood-stock-price-service
-spec:
-  selector:
-    app: robinhood-stock-price
-  ports:
-    - protocol: TCP
-      port: 8001
