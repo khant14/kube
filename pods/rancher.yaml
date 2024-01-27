@@ -7,5 +7,5 @@ spec:
     kubernetes.io/hostname: vps-e5b6e282
   restartPolicy: OnFailure
   containers:
-      image: rancher/rancher:latest
-      name: rancher
+    image: rancher/rancher:latest
+    name: rancher
