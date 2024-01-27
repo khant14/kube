@@ -1,11 +1,21 @@
-apiVersion: v1
-kind: Pod
+apiVersion: apps/v1
+kind: Deployment
 metadata:
   name: rancher
 spec:
-  nodeSelector:
-    kubernetes.io/hostname: vps-e5b6e282
-  restartPolicy: OnFailure
-  containers:
-    image: rancher/rancher:latest
-    name: rancher
+  selector:
+    matchLabels:
+      app: rancher
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        app: rancher
+    spec:
+      containers:
+        - name: rancher
+          image: rancher/rancher:latest
+          ports:
+            - containerPort: 3000
+      nodeSelector:
+        kubernetes.io/hostname: vps-e5b6e282
