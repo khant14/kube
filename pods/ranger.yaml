@@ -1,0 +1,11 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: rancher
+spec:
+  nodeSelector:
+    kubernetes.io/hostname: vps-e5b6e282
+  restartPolicy: OnFailure
+  containers:
+      image: rancher/rancher:latest
+      name: rancher
