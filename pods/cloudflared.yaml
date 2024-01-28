@@ -3,7 +3,8 @@ kind: Pod
 metadata:
   name: cloudflared
 spec:
-  nodeSelector: cloudflare=khant
+  nodeSelector:
+    cloudflare: khant
   restartPolicy: OnFailure
   containers:
     - command:
