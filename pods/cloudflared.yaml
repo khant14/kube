@@ -3,8 +3,7 @@ kind: Pod
 metadata:
   name: cloudflared
 spec:
-  nodeSelector:
-    node.kubernetes.io/microk8s-controlplane: microk8s-controlplane
+  nodeSelector: cloudflare=khant
   restartPolicy: OnFailure
   containers:
     - command:
