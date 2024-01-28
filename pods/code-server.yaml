@@ -20,5 +20,5 @@ spec:
             - name: PASSWORD
               value: "your_password"
       nodeSelector:
-        node.kubernetes.io/microk8s-worker: microk8s-worker
+        type: worker
 
