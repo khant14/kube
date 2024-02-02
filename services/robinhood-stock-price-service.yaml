@@ -5,6 +5,7 @@ metadata:
 spec:
   selector:
     app: robinhood-stock-price
+  clusterIP: 10.43.70.96
   ports:
     - protocol: TCP
       port: 8001

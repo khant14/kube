@@ -17,5 +17,3 @@ spec:
           image: khant14/robinhood-stock-price
           ports:
             - containerPort: 8001
-      nodeSelector:
-        type: worker

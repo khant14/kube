@@ -17,5 +17,3 @@ spec:
           image: khant14/stock-symbols-api
           ports:
             - containerPort: 8002
-      nodeSelector:
-        type: worker
